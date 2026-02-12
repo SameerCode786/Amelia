@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -20,8 +19,6 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Artificial delay to showcase the luxury loader, 
-    // but in production, this could be window.onload or similar.
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2800);
@@ -59,10 +56,8 @@ const App: React.FC = () => {
 
   return (
     <div className="relative bg-white selection:bg-[#D4AF37] selection:text-white">
-      {/* Premium Preloader */}
       <Preloader isLoading={isLoading} />
 
-      {/* Premium Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-[#D4AF37] z-[100] origin-left"
         style={{ scaleX }}
@@ -90,7 +85,6 @@ const App: React.FC = () => {
           <ServiceKit />
           <NewsSection />
           
-          {/* Market Valuation CTA */}
           <section className="relative h-[400px] flex items-center justify-center overflow-hidden bg-[#001F3F]">
             <div className="absolute inset-0 opacity-20">
               <img 
